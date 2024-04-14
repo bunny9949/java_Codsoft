@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class  student
+{
+    public static void main(String[] arg)
+    {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Student Grade");
+        System.out.println("Enter no of subjects :");
+        int n=s.nextInt();
+        int l=0;
+        for(int i=0;i<n;i++)
+        {
+            System.out.println("Enter marks in "+(i+1)+": ");
+            int marks=s.nextInt();
+            l+=marks;
+        }
+        double avg=(double)l/n;
+    char Grade;
+    if(avg>=90)
+    {
+        Grade='A';
+    }
+    else if(avg>=80)
+    {
+        Grade='B';
+    }
+    else if(avg>=70)
+    {
+        Grade='C';
+    }
+    else if(avg>=60)
+    {
+        Grade='D';
+    }
+    else if(avg>=50)
+    {
+        Grade='E';
+    }
+    else
+    {
+        Grade='F';
+    }
+    System.out.println("Total marks "+l);
+    System.out.println("Average percentage "+avg+"%");
+    System.out.println("Grade : "+Grade);
+        
+    }
+}
