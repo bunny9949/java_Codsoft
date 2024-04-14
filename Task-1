@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class number_game
+{
+    public static void main(String[] arg)
+    {
+        Scanner s=new Scanner(System.in);
+        int a=7;
+        int b=0;
+        boolean pa=true;
+        System.out.println("Welcome");
+        System.out.println("Hey you have "+a+" chances to win this");
+        while(pa)
+        {
+            int random=getrandomN(1,100);
+            boolean guess=false;
+            for(int i=0;i<a;i++)
+            {
+                System.out.println("Number-"+(i+1) +" Enter your guess :");
+                int user=s.nextInt();
+                if(user==random)
+                {
+                    guess=true;
+                    b+=1;
+                    System.out.println("You won");
+                    break;
+                }
+                else if(user>random)
+                {
+                    System.out.println("Too High");
+                }
+                else
+                {
+                    System.out.println("Too Low");
+                }
+            }
+            if(guess==false)
+            {
+                System.out.println("Sorry You completed all your chances.The number is "+random);
+            }
+            System.out.println("Are you interested to play again (y/n)");
+            String pa=s.next();
+            PA=pa.equalsIgnoreCase("y");
+        }
+        System.out.println("Hope you enjoyed");
+        System.out.println("score is"+b);
+    }
+        public static int getrandomN(int min,int max)
+        {
+            return (int)(Math.random()*(max-min+1)+min);
+        }
+}
